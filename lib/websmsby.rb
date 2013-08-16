@@ -1,4 +1,6 @@
-require "websmsby/version"
+require "action_controller/railtie"
+
+require "websmsby/engine"
 require "websmsby/websmsby_api"
 
 module Websmsby
