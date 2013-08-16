@@ -1,10 +1,11 @@
-require "action_controller/railtie"
+require "action_controller/railtie" # my hardfix
 
 require "websmsby/engine"
 require "websmsby/websmsby_api"
 
 module Websmsby
-  def self.send_sms
-    WebsmsbyApi.new.send_sms
+  def self.api(r, params = {})
+    params = {} if not params.is_a?(Hash)
+    return WebsmsbyApi.new.api(r, params)
   end
 end
