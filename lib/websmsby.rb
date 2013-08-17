@@ -2,7 +2,6 @@ require "action_controller/railtie" # my hardfix
 require "active_support/dependencies"
 
 require "websmsby/engine"
-
 require "websmsby/websmsby_api"
 
 module Websmsby

@@ -12,6 +12,16 @@ And then execute:
 
     $ bundle
 
+Create a Websmsby initializer for your application.
+
+    rails generate websmsby:install
+
+Paste your credentials in config/initializers/websmsby.rb
+
+Communicate with webmsm.by API according with http://websms.by/index.php?r=site/doc with calling the Websmsby.api method, which would return json websms.by response.
+
+    Websmsby.api( request, params )
+
 ## Usage
 
 TODO: Write usage instructions here
