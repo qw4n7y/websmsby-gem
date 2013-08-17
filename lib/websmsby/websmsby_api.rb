@@ -7,10 +7,10 @@ module Websmsby
 
     def config
       {
-        :url => "http://websms.by",
+        :url => "http://websms.by/",
         :timeout => 15,
-        :user => "user@gmail.com",
-        :apikey => "qwerty123"
+        :user => Websmsby.user || "user@gmail.com",
+        :apikey => Websmsby.apikey ||"qwerty123"
       }
     end
 
