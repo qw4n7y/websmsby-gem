@@ -6,7 +6,7 @@ Websms.by API
 
 Add this line to your application's Gemfile:
 
-    gem 'websmsby', :git => "git@github.com:qw4n7y/websmsby-gem.git"
+    gem 'websmsby'
 
 And then execute:
 
