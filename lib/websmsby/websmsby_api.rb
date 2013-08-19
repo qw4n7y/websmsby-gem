@@ -1,6 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'net/https'
+require 'json'
 
 module Websmsby
   class WebsmsbyApi
@@ -24,7 +25,7 @@ module Websmsby
       uri = URI(config[:url])
       response = Net::HTTP.post_form uri, post_params
 
-      return response.body
+      return JSON.parse response.body
     end
   end
 end
