@@ -15,9 +15,11 @@ module Websmsby
       }
     end
 
-    def form_post_params(params)
+    def form_post_params(r, params = {})
       post_params = {}
-      params.each {|key, value| post_params[key] = value}
+      params.each do |key, value|
+        post_params[key] = value.to_json
+      end
       post_params[:r] = r
       post_params[:user] = config[:user]
       post_params[:apikey] = config[:apikey]
@@ -25,13 +27,19 @@ module Websmsby
       post_params
     end
 
-    def api(r, params = {})
-      post_params = form_post_params(params)
+    def call(r, params = {})
+      post_params = form_post_params(r, params)
 
       uri = URI(config[:url])
       response = Net::HTTP.post_form uri, post_params
+      
+      begin
+        json_response = JSON.parse response.body
+      rescue Exception
+        json_response = nil
+      end
 
-      return JSON.parse response.body
+      return json_response
     end
   end
 end
