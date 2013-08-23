@@ -26,7 +26,7 @@ Gem для удобной работы с API сервиса websms.by
 
 ## Пример
 
-    response = Websmsby.api("api/user_balance")
+    response = Websmsby.api("api/user_balance") # or just Websmsby.user_balance
     puts response["balance"] if response["status"] == "success"
 
     response = Websmsby.msg_send_bulk(:messages => [{:custom_id => "1", :recipient => "123456789", :message => "Привет!"}, {:custom_id => "2", :recipient => "234567890", :message => "Доброго дня!"}])
