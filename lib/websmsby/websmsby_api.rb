@@ -9,18 +9,24 @@ module Websmsby
     def config
       {
         :url => "http://websms.by/",
-        :timeout => 15,
         :user => Websmsby.user || "user@gmail.com",
-        :apikey => Websmsby.apikey ||"qwerty123"
+        :apikey => Websmsby.apikey ||"qwerty123",
+        :devkey => "I8uerYjw732jhhGJvhs"
       }
     end
 
-    def api(r, params = {})
+    def form_post_params(params)
       post_params = {}
       params.each {|key, value| post_params[key] = value}
       post_params[:r] = r
       post_params[:user] = config[:user]
       post_params[:apikey] = config[:apikey]
+      post_params[:devkey] = config[:devkey]
+      post_params
+    end
+
+    def api(r, params = {})
+      post_params = form_post_params(params)
 
       uri = URI(config[:url])
       response = Net::HTTP.post_form uri, post_params
