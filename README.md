@@ -1,6 +1,6 @@
 # Websmsby
 
-Websms.by API
+Gem для удобной работы с API сервиса websms.by
 
 ## Установка и конфигурирование
 
@@ -38,5 +38,5 @@ Websms.by API
       puts "Ошибка #{response['error']}: #{response['message']}"
     end
 
-    
+
 Copyright (c) 2013 Yury Samarychev, released under the GNU GPL v3
