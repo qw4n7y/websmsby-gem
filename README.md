@@ -34,3 +34,5 @@ Communicate with webmsm.by API according with http://websms.by/index.php?r=site/
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+Copyright (c) 2013 Yury Samarychev, released under the GNU GPL v3
