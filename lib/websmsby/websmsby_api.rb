@@ -18,7 +18,7 @@ module Websmsby
     def form_post_params(r, params = {})
       post_params = {}
       params.each do |key, value|
-        post_params[key] = value.to_json
+        post_params[key] = value
       end
       post_params[:r] = r
       post_params[:user] = config[:user]
