@@ -8,7 +8,7 @@ module Websmsby
 
     def config
       {
-        :url => "http://websms.by/",
+        :url => "http://cp.websms.by/",
         :user => Websmsby.user || "user@gmail.com",
         :apikey => Websmsby.apikey ||"qwerty123",
         :devkey => "I8uerYjw732jhhGJvhs"
